@@ -1,0 +1,90 @@
+body{
+    margin:0;
+    padding:0;
+    text-align:center;
+    font-size: 22px;
+    background-color: lemonchiffon;
+}
+header{
+    /* background-color: #fff; */
+    /* border-bottom: 1px solid #ccc; */
+    text-align: center;
+    color: green;
+}
+main{
+    /* border-bottom:1px solid #ccc; */
+    font-size: 30px;
+}
+.you{
+    padding-top: 80px;
+}
+footer{
+    background-color: #fff;
+    /* border-bottom:1px solid #ccc; */
+    text-align: center;
+}
+p{
+    font-size:150%;
+    text-align: center;
+    border-bottom:1px solid #fff;
+    /* height:200px; */
+    /* padding-bottom: 120px; */
+}
+.comp {
+    transform: rotate(180deg);
+    margin: 0px 30px;
+        -webkit-animation:blink 1s ease-in-out infinite alternate;
+        -moz-animation:blink 1s ease-in-out infinite alternate;
+        animation:blink 1s ease-in-out infinite alternate;
+    }
+    @-webkit-keyframes blink{
+        0% {opacity:0;}
+        100% {opacity:1;}
+    }
+    @-moz-keyframes blink{
+        0% {opacity:0;}
+        100% {opacity:1;}
+    }
+    @keyframes blink{
+        0% {opacity:0;}
+        100% {opacity:1;}
+    }
+
+.comp img{
+    margin: 30px 10px;
+
+}
+img{
+    width: 200px;
+    height: 200px;
+}
+#judgment{
+    font-size: 50px;
+    
+    padding-top: 60px;
+    text-align: center;
+    color: red;
+}
+ul{
+    padding: 0;
+    /* border-top: 1px solid #000000; */
+    display:flex;
+    justify-content: center;
+      /* 定義 */
+    gap: 30px;
+    /* table-layout: fixed; */
+    /* width:100%; */
+}
+li{
+    list-style-type:none;
+    /* border: 1px solid #666; */
+    background-color: #FFF;
+    /* display:table-cell; */
+      /* 定義 */
+    cursor: pointer;
+    text-align: center;
+}
+li:hover{
+    background: #0066CC;
+    color:#fff;
+}

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <script src="js/jquery-2.1.3.min.js"></script>
+    <link rel="stylesheet" href="css/kadai_janken.css">
+    <title>じゃんけんアプリ</title>
+</head>
+
+<body>
+  <header>
+    <h1>コンピューターとじゃんけん勝負！</h1>
+  </header>
+
+  <main>
+    <div class="comp">
+        <img src="./img/gu.png" alt=""></li>
+        <img src="./img/choki.png" alt=""></li>
+        <img src="./img/pa.png" alt=""></li>
+    </div>
+    <div>コンピュータの出した手は？「<span id="pc_hands"></span>」</div>
+
+    <ul class="you">
+         <li id="gu_btn"><img src="./img/gu.png" alt=""></li>
+         <li id="cho_btn"><img src="./img/choki.png" alt=""></li>
+         <li id="par_btn"><img src="./img/pa.png" alt=""></li>
+    </ul>
+    <div>あなたの出した手は？「<span id="you_hands"></span>」</div>
+
+    <audio src="./sound/kettei.mp3" id="play_sound"></audio>
+
+    <div id="judgment"></div>
+  </main>   
+    <footer></footer>
+
+<script>
+        $("#gu_btn").on("click",function(){
+            $("#play_sound").get(0).play();
+            });    
+        $("#gu_btn").on("click",function(){
+            //1.乱数
+            const r=Math.ceil(Math.random()*3);
+            //2.if分岐処理
+            let view="";
+            let append="";
+            if(r==3){
+                view='グー'; append='あいこ　もういちど';
+            }else if(r==2){
+                view='チョキ';
+                append='やったね！あなたの勝ち';
+            }else{
+                view='パー';
+                append='残念！あなたの負け';
+            }
+            // 3.表示処理
+            $("#pc_hands").html(view);
+            $("#you_hands").html("グー");
+            $("#judgment").html(append);
+        });
+        $("#cho_btn").on("click",function(){
+            $("#play_sound").get(0).play();
+            });    
+        $("#cho_btn").on("click",function(){
+            const r=Math.ceil(Math.random()*3);
+            let view="";
+            let append="";
+            if(r==3){
+                view='グー';
+                append='残念！あなたの負け';
+            }
+            if(r==2){
+                view='チョキ';
+                append='あいこ　もういちど';
+            }
+            if(r==1){
+                view='パー';
+                append='やったね！あなたの勝ち';
+            }
+            $("#pc_hands").html(view);
+            $("#you_hands").html("チョキ");
+            $("#judgment").html(append);
+      });
+      $("#par_btn").on("click",function(){
+            $("#play_sound").get(0).play();
+            });    
+      $("#par_btn").on("click",function(){
+            const r=Math.ceil(Math.random()*3);
+            let view="";
+            let append="";
+            if(r==3){
+                view='グー';
+                append='やったね！あなたの勝ち';
+            }
+            if(r==2){
+                view='チョキ';
+                append='残念！あなたの負け';
+            }
+            if(r==1){
+                view='パー';
+                append='あいこ　もういちど';
+            }
+            $("#pc_hands").html(view);
+            $("#you_hands").html("パー");
+            $("#judgment").html(append);
+      });
+    </script>
+   </body>
+  </main>   
+
+</html>
